@@ -29,8 +29,6 @@
         .logo {
           width: 120px;
           height: 80px;
-          background: url("logo.png") no-repeat center;
-          background-size: contain;
         }
         .brand-logo {
             height: 140px;      /* Ukuran tinggi ideal untuk navbar */
@@ -80,7 +78,8 @@
             background-size: cover; background-position: center;
             height: 90vh; display: flex; align-items: center; color: white;
         }
-        .hero h1 { font-size: 4rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
+        /*.tyt { font-size: 50px;line-height: 0.6; font-weight: 100; margin-bottom: 90px; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; }*/
+        .title { font-size: 4rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
         .hero span { color: var(--accent); }
 
         /* --- Brands Grid --- */
@@ -125,7 +124,10 @@
 
     <header class="hero">
         <div class="container text-center">
-            <h1 class="mx-auto" style="max-width: 900px;">Distributor Resmi <span>Aksesoris IT</span> & Gadget Terkemuka</h1>
+            <a class="container d-flex justify-content-center align-items-center logo" style="padding-bottom: 90px;" href="#">
+            <img style="width:auto;height: 400px;" src="assets/images/putih.png">
+            </a>
+            <h1 class="mx-auto title" style="max-width: 900px;">Distributor Resmi <span>Aksesoris IT</span> & Gadget Terkemuka</h1>
             <p class="lead mb-5" style="opacity: 0.8; font-weight: 400;">Menyediakan produk original, berkualitas tinggi, dan stok konsisten untuk pasar Indonesia.</p>
             <div class="d-flex justify-content-center gap-3">
                 <a href="#brands" class="btn-primary-custom">Lihat Koleksi Brand</a>
