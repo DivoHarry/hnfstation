@@ -14,6 +14,9 @@
             --accent-orange: #f39c12;
             --text-light: #ffffff;
             --text-muted: #b0b3b8;
+            --primary: #0b0d17;
+            --accent: #f39c12; /* Gold/Orange untuk kesan premium */
+            --bg-light: #f8f9fa;
         }
 
         body {
@@ -24,15 +27,65 @@
             overflow-x: hidden;
         }
 
+        /*LOGO*/
+        /* Container Logo agar sejajar tengah secara vertikal */
+        .navbar-brand {
+            gap: 12px; /* Jarak antara gambar dan teks */
+            padding-top: 0;
+            padding-bottom: 0;
+            display: flex;
+            align-items: center; /* Menjaga logo dan teks tetap sejajar tengah secara vertikal */
+        }
+
+        /* Pengaturan Ukuran Gambar Logo */
+        .brand-logo {
+            height: 140px;      /* Ukuran tinggi ideal untuk navbar */
+            width: auto;       /* Menjaga rasio gambar */
+            max-width: 150px;  /* Batas maksimal lebar */
+            /* Inti dari cropping: */
+            object-fit: cover; 
+            /* Opsional: Mengatur posisi crop (center, top, bottom, dll) */
+            object-position: center;
+            /*object-fit: contain;*/
+            transition: transform 0.3s ease; /* Efek halus saat hover */
+
+        }
+
+        /* Gaya Teks Logo */
+        .brand-text {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-family: 'Raleway', sans-serif; /* Pastikan font ini ter-import */
+        }
+
+        /* Highlight warna untuk kata 'STATION' (Opsional) */
+        .brand-text .highlight {
+            color: #f39c12; /* Warna orange/gold agar eyecatching */
+        }
+
+        /* Efek Hover (Saat kursor di atas logo) */
+        .navbar-brand:hover .brand-logo {
+            transform: scale(1.05); /* Logo sedikit membesar */
+        }
+
+        /* Responsif: Kecilkan logo di layar HP */
+        @media (max-width: 768px) {
+            .brand-logo {
+                height: 35px;
+            }
+            .brand-text {
+                font-size: 1.1rem;
+            }
+        }
+
         /* --- NAVBAR --- */
         .navbar {
             background-color: rgba(11, 13, 23, 0.95);
-            padding: 15px 0;
+            padding: 0px 0;
             border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .navbar-brand img {
-            height: 50px;
-            filter: brightness(1.2);
         }
         .nav-link {
             color: white !important;
@@ -41,11 +94,12 @@
             text-transform: uppercase;
             margin: 0 12px;
         }
+        .nav-link:hover { color: var(--accent) !important; }
 
         /* --- HERO SECTION --- */
         .hero-section {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('assets/images/Dark Blue Simple Dark Tech and Gaming Bio-Link Website.png');
+            url('assets/images/Dark Blue Simple Dark Tech and Gaming Bio-Link Website.png');
             background-size: cover;
             background-position: center;
             height: 95vh;
@@ -123,22 +177,23 @@
             gap: 15px;
         }
         @media (min-width: 768px) { .brand-grid { grid-template-columns: repeat(3, 1fr); } }
-        
+
         .brand-item {
-            background: #1a1a1a;
+            background: var(--primary); color: white; padding: 40px 20px;
             color: white;
             padding: 25px;
             text-align: center;
             font-weight: 800;
             font-size: 1.2rem;
             letter-spacing: 1px;
-            border-radius: 4px;
+            border-radius: 4px; transition: 0.4s;
         }
+        .brand-item:hover { transform: translateY(-10px); background: var(--accent); color: var(--primary); }
 
         /* --- VISION / INVESTMENT SECTION --- */
         .vision-section {
             background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
-                        url('https://colorlibhub.com/wp-content/uploads/sites/59/2016/12/photo-1452723312111-3a7d0db0e024.jpg');
+            url('https://colorlibhub.com/wp-content/uploads/sites/59/2016/12/photo-1452723312111-3a7d0db0e024.jpg');
             background-size: cover;
             padding: 100px 0;
             color: white;
@@ -158,8 +213,9 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="https://files.oaiusercontent.com/file-V6pA5GqA4N6u3R9G5B6Z7G?se=2024-10-25T07%3A18%3A22Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20private%2C%20immutable&rscd=attachment%3B%20filename%3D45f47012-78d1-4328-97c7-6e69191d4e74.webp&sig=2D0W9hXGzSg9V4ZzY0rD6yY8L7e1G/T9%2BX/U/yW9l8A%3D" alt="HNF Station Logo">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="assets/images/loh.png" alt="HNF Station Logo" class="brand-logo">
+                <span class="brand-text">H&F <span class="highlight">STATION</span></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -168,7 +224,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Brands</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#brands">Brands</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Partnership</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
                 </ul>
@@ -209,7 +265,7 @@
         </div>
     </section>
 
-    <section class="quality-section container">
+    <section id="brands" class="quality-section container">
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <p class="text-muted text-uppercase fw-bold">Quality Focus</p>
