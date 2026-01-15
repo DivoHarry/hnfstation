@@ -11,21 +11,72 @@
     <style>
         :root {
             --primary: #0b0d17;
-            --accent: #f39c12; /* Gold/Orange untuk kesan premium */
+            --accent: #b56f28; /* Gold/Orange untuk kesan premium */
             --bg-light: #f8f9fa;
         }
 
         body { font-family: 'Inter', sans-serif; color: #333; scroll-behavior: smooth; }
 
         /* --- Navigation --- */
-        .navbar { background: var(--primary); padding: 20px 0; border-bottom: 1px solid #222; }
-        .navbar-brand img { height: 45px; }
+        .navbar { background: var(--primary);padding:0px 0;border-bottom: 1px solid #222;}
+        /*.navbar-brand img { height: 140px; }*/
         .nav-link { color: #fff !important; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; margin-left: 25px; }
         .nav-link:hover { color: var(--accent) !important; }
 
+        
+
+        /* Pengaturan Ukuran Gambar Logo */
+        .logo {
+          width: 120px;
+          height: 80px;
+          background: url("logo.png") no-repeat center;
+          background-size: contain;
+        }
+        .brand-logo {
+            height: 140px;      /* Ukuran tinggi ideal untuk navbar */
+            width: auto;       /* Menjaga rasio gambar */
+            max-width: 150px;  /* Batas maksimal lebar */
+            /* Inti dari cropping: */
+            object-fit: cover; 
+            /* Opsional: Mengatur posisi crop (center, top, bottom, dll) */
+            object-position: center;
+            transition: transform 0.3s ease; /* Efek halus saat hover */
+
+        }
+
+        /* Gaya Teks Logo */
+        .brand-text {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-family: 'Raleway', sans-serif; /* Pastikan font ini ter-import */
+        }
+
+        /* Highlight warna untuk kata 'STATION' (Opsional) */
+        .brand-text .highlight {
+            color: #f39c12; /* Warna orange/gold agar eyecatching */
+        }
+
+        /* Efek Hover (Saat kursor di atas logo) */
+        .navbar-brand:hover .brand-logo {
+            transform: scale(1.05); /* Logo sedikit membesar */
+        }
+
+        /* Responsif: Kecilkan logo di layar HP */
+        @media (max-width: 768px) {
+            .brand-logo {
+                height: 35px;
+            }
+            .brand-text {
+                font-size: 1.1rem;
+            }
+        }
+
         /* --- Hero Section --- */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&q=80');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/images/Dark Blue Simple Dark Tech and Gaming Bio-Link Website.png');
             background-size: cover; background-position: center;
             height: 90vh; display: flex; align-items: center; color: white;
         }
@@ -45,7 +96,7 @@
         /* --- CTA Buttons --- */
         .btn-primary-custom { background: var(--accent); color: white; border: none; padding: 15px 35px; font-weight: 700; border-radius: 5px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: 0.3s; }
         .btn-primary-custom:hover { background: #d35400; transform: scale(1.05); color: white; }
-        
+
         .btn-secondary-custom { border: 2px solid white; color: white; padding: 15px 35px; font-weight: 700; border-radius: 5px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: 0.3s; }
         .btn-secondary-custom:hover { background: white; color: var(--primary); }
 
@@ -57,8 +108,8 @@
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="https://files.oaiusercontent.com/file-V6pA5GqA4N6u3R9G5B6Z7G?se=2024-10-25T07%3A18%3A22Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20private%2C%20immutable&rscd=attachment%3B%20filename%3D45f47012-78d1-4328-97c7-6e69191d4e74.webp&sig=2D0W9hXGzSg9V4ZzY0rD6yY8L7e1G/T9%2BX/U/yW9l8A%3D" alt="HNF Station">
+            <a class="navbar-brand d-flex align-items-center logo" href="#">
+                <img class="brand-logo" src="assets/images/loh.png" alt="HNF Station">
             </a>
             <div class="collapse navbar-collapse justify-content-end">
                 <ul class="navbar-nav">
