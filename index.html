@@ -1,170 +1,254 @@
 <!DOCTYPE html>
-<html lang="id-ID">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PT HNF Station Indonesia - Retail & Distribusi Aksesoris IT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT HNF Station Indonesia - Retail & Distribusi IT</title>
     
-    <link rel='stylesheet' id='bootstrap-css' href='https://colorlibhub.com/shapely/wp-content/themes/shapely/assets/css/bootstrap.min.css?ver=6.9' type='text/css' media='all' />
-    <link rel='stylesheet' id='font-awesome-css' href='https://colorlibhub.com/shapely/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css?ver=4.7.0' type='text/css' media='all' />
-    <link rel='stylesheet' id='shapely-style-css' href='https://colorlibhub.com/shapely/wp-content/themes/shapely/style.css?ver=6.9' type='text/css' media='all' />
-    <link rel='stylesheet' id='shapely-custom-css' href='https://colorlibhub.com/shapely/wp-content/themes/shapely/assets/css/custom.css?ver=6.9' type='text/css' media='all' />
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,600,700&display=swap" rel="stylesheet">
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        .btn-filled { background: #111421; border: 2px solid #111421; color: #fff; }
-        .btn-filled:hover { background: #f5a623; border-color: #f5a623; color: #fff; }
-        .bg-secondary { background-color: #f9f9f9; }
-        .brand-list li { margin-bottom: 10px; font-size: 16px; }
-        .brand-list strong { color: #111421; }
+        :root {
+            --dark-blue: #0b0d17;
+            --accent-orange: #f39c12;
+            --text-light: #ffffff;
+            --text-muted: #b0b3b8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            background-color: rgba(11, 13, 23, 0.95);
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .navbar-brand img {
+            height: 50px;
+            filter: brightness(1.2);
+        }
+        .nav-link {
+            color: white !important;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin: 0 12px;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('assets/images/Dark Blue Simple Dark Tech and Gaming Bio-Link Website.png');
+            background-size: cover;
+            background-position: center;
+            height: 95vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        .hero-label {
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero-desc {
+            max-width: 600px;
+            color: #d1d1d1;
+            margin-bottom: 30px;
+        }
+
+        /* --- BUTTONS --- */
+        .btn-outline-custom {
+            border: 1px solid #ffffff;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 15px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .btn-filled-custom {
+            background-color: white;
+            color: var(--dark-blue);
+            padding: 12px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .btn-orange-custom {
+            background-color: var(--accent-orange);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        /* --- PRODUCT IMAGES SECTION --- */
+        .product-grid {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .product-img-wrapper img {
+            max-width: 100%;
+            transition: transform 0.5s;
+        }
+
+        /* --- QUALITY SECTION --- */
+        .quality-section {
+            padding: 100px 0;
+        }
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        @media (min-width: 768px) { .brand-grid { grid-template-columns: repeat(3, 1fr); } }
+        
+        .brand-item {
+            background: #1a1a1a;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            border-radius: 4px;
+        }
+
+        /* --- VISION / INVESTMENT SECTION --- */
+        .vision-section {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                        url('https://colorlibhub.com/wp-content/uploads/sites/59/2016/12/photo-1452723312111-3a7d0db0e024.jpg');
+            background-size: cover;
+            padding: 100px 0;
+            color: white;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #0b0d17;
+            padding: 40px 0;
+            color: #666;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
     </style>
 </head>
+<body>
 
-<body class="home">
-    <div id="page" class="site">
-        <header id="masthead" class="site-header" role="banner">
-            <div class="nav-container">
-                <nav id="site-navigation" class="main-navigation" role="navigation">
-                    <div class="container nav-bar">
-                        <div class="flex-row">
-                            <div class="module left site-title-container">
-                                <a href="#" class="custom-logo-link"><span class="site-title">H&F Station</span></a>
-                            </div>
-                            <div class="module-group right">
-                                <div class="module left">
-                                    <div class="collapse navbar-collapse">
-                                        <ul id="menu" class="menu">
-                                            <li class="menu-item active"><a href="#">Beranda</a></li>
-                                            <li class="menu-item"><a href="#about">Tentang Kami</a></li>
-                                            <li class="menu-item"><a href="#brands">Brand</a></li>
-                                            <li class="menu-item"><a href="#partnership">Kemitraan</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://files.oaiusercontent.com/file-V6pA5GqA4N6u3R9G5B6Z7G?se=2024-10-25T07%3A18%3A22Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20private%2C%20immutable&rscd=attachment%3B%20filename%3D45f47012-78d1-4328-97c7-6e69191d4e74.webp&sig=2D0W9hXGzSg9V4ZzY0rD6yY8L7e1G/T9%2BX/U/yW9l8A%3D" alt="HNF Station Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Brands</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Partnership</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+                </ul>
             </div>
-        </header>
+        </div>
+    </nav>
 
-        <div id="content" class="main-container">
-            <div id="main" role="main">
-                
-                <div class="widget shapely_home_parallax">
-                    <section class="cover fullscreen image-bg">
-                        <div class="parallax-window fullscreen" data-parallax="scroll" data-image-src="assets/images/Dark Blue Simple Dark Tech and Gaming Bio-Link Website.png">
-                            <div class="align-transform">
-                                <div class="row">
-                                    <div class="top-parallax-section">
-                                        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
-                                            <h1 style="text-transform: uppercase;">Retail & Distribusi Aksesoris IT & Gadget Terpercaya</h1>
-                                            <div class="mb32">
-                                                <p>PT HNF Station Indonesia berfokus pada kualitas produk, keaslian, dan ketersediaan stok yang konsisten untuk solusi teknologi harian Anda[cite: 53, 54].</p>
-                                            </div>
-                                            <a class="btn btn-lg btn-filled" href="#about">Pelajari Lebih Lanjut</a>
-                                            <a class="btn btn-lg btn-white" href="#brands">Brand Kami</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <div id="about" class="widget shapely_home_parallax">
-                    <section>
-                        <div class="container">
-                            <div class="row align-children">
-                                <div class="col-md-7 col-sm-6 text-center">
-                                    <img class="img-responsive" alt="HNF Indonesia" src="https://colorlibhub.com/wp-content/uploads/sites/59/2016/03/macbook-preview-flexible.png">
-                                </div>
-                                <div class="col-md-4 col-md-offset-1 col-sm-5 col-sm-offset-1">
-                                    <h3>Solusi Aksesoris IT Terintegrasi</h3>
-                                    <div class="mb32">
-                                        <p>Kami melayani pasar B2C dan B2B melalui kanal online maupun offline dengan pendekatan bisnis yang adaptif dan terukur[cite: 55]. Visi kami adalah menjadi perusahaan retail IT yang paling terpercaya dan berkelanjutan di Indonesia[cite: 57].</p>
-                                    </div>
-                                    <a class="btn btn-lg btn-filled" href="#">Layanan Kami</a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <div id="brands" class="widget shapely_home_parallax">
-                    <section class="bg-secondary">
-                        <div class="container">
-                            <div class="row align-children">
-                                <div class="col-md-4 col-sm-5 mb-xs-24">
-                                    <h3>Brand Global Pilihan</h3>
-                                    <div class="mb32">
-                                        <ul class="brand-list" style="list-style: none; padding-left: 0;">
-                                            <li><strong>Anker:</strong> Pemimpin global dalam solusi pengisian daya premium[cite: 64].</li>
-                                            <li><strong>Spigen:</strong> Perlindungan gadget kelas dunia[cite: 65].</li>
-                                            <li><strong>Momax:</strong> Teknologi gaya hidup modern dan inovatif[cite: 45].</li>
-                                            <li><strong>USAMS & KIIP:</strong> Aksesoris trendi dengan nilai fungsional tinggi[cite: 43, 44].</li>
-                                        </ul>
-                                    </div>
-                                    <a class="btn btn-lg btn-filled" href="#">Lihat Semua Brand</a>
-                                </div>
-                                <div class="col-md-7 col-md-offset-1 col-sm-6 col-sm-offset-1 text-center">
-                                    <img class="img-responsive" alt="Portfolio Brands" src="https://colorlibhub.com/wp-content/uploads/sites/59/2016/03/flexible-portfolio.png">
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <div id="partnership" class="widget shapely_home_parallax">
-                    <section class="small-screen image-bg p0">
-                        <div class="parallax-window" data-parallax="scroll" data-image-src="https://colorlibhub.com/wp-content/uploads/sites/59/2016/12/photo-1452723312111-3a7d0db0e024.jpg">
-                            <div class="row">
-                                <div class="top-parallax-section">
-                                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
-                                        <h1>Kesempatan Investasi & Kemitraan</h1>
-                                        <div class="mb32">
-                                            <p>HNF Station membuka peluang bagi para mitra dan investor untuk mempercepat pertumbuhan bisnis dan ekspansi distribusi kami di pasar yang berkembang pesat[cite: 46].</p>
-                                        </div>
-                                        <a class="btn btn-lg btn-filled" href="#">Hubungi Kami</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <div class="widget shapely_home_parallax">
-                    <section class="bg-secondary pb0 text-center">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-10 col-sm-offset-1">
-                                    <h3>Siap Tumbuh Bersama Kami?</h3>
-                                    <div class="mb32">
-                                        <p>Dengan pondasi operasional yang solid dan visi jangka panjang, kami siap menjadi mitra terpercaya Anda[cite: 46].</p>
-                                    </div>
-                                    <a class="btn btn-lg btn-filled" href="#">Gabung Sekarang</a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <p class="hero-label">HNF Station</p>
+                    <h1>Retail & Distribusi Aksesoris <br> IT & Gadget Terpercaya</h1>
+                    <p class="hero-desc lead">HNF Station Indonesia berfokus pada kualitas produk, keaslian, dan ketersediaan stok yang konsisten untuk solusi teknologi harian Anda.</p>
+                    <div class="hero-btns">
+                        <a href="#" class="btn-outline-custom">Learn More</a>
+                        <a href="#" class="btn-filled-custom">Explore Shop</a>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <footer id="colophon" class="site-footer" role="contentinfo">
-            <div class="footer-inner text-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            &copy; 2026 PT HNF Station Indonesia. All rights reserved.
-                        </div>
+    <section class="product-grid">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-6 mb-4">
+                    <div class="product-img-wrapper">
+                        <img src="https://colorlibhub.com/wp-content/uploads/sites/59/2016/03/macbook-preview-flexible.png" alt="Laptop Gadget">
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="product-img-wrapper">
+                        <img src="https://colorlibhub.com/wp-content/uploads/sites/59/2016/03/macbook-preview-flexible.png" alt="Gadget Accessories">
                     </div>
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </section>
 
-    <script type="text/javascript" src="https://colorlibhub.com/shapely/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax.js/1.5.0/parallax.min.js"></script>
+    <section class="quality-section container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <p class="text-muted text-uppercase fw-bold">Quality Focus</p>
+                <h2 class="display-5 fw-bold mb-4">Kualitas & Keaslian <br>Terjamin</h2>
+                <p class="mb-4">Kami melayani pasar B2C dan B2B melalui kanal online maupun offline dengan pendekatan bisnis yang adaptif dan terukur, membawa brand-brand terkemuka ke tangan Anda.</p>
+                <a href="#" class="btn-outline-custom" style="color: #333; border-color: #333;">Pelajari Detail</a>
+                <a href="#" class="btn-orange-custom">Beli Sekarang</a>
+            </div>
+            <div class="col-lg-6 mt-5 mt-lg-0">
+                <div class="brand-grid">
+                    <div class="brand-item">ANKER</div>
+                    <div class="brand-item">SPIGEN</div>
+                    <div class="brand-item">MOMAX</div>
+                    <div class="brand-item">USAMS</div>
+                    <div class="brand-item">KIIP</div>
+                    <div class="brand-item">MIKE7</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="vision-section">
+        <div class="container text-center">
+            <p class="text-uppercase fw-bold" style="color: var(--accent-orange);">Visi Kami</p>
+            <h2 class="display-4 fw-bold mb-4">Brand Global Pilihan <br> & Kemitraan</h2>
+            <p class="mx-auto mb-5" style="max-width: 700px; opacity: 0.8;">HNF Station membuka peluang bagi para mitra dan investor untuk mempercepat pertumbuhan bisnis dan ekspansi distribusi kami di pasar yang berkembang pesat.</p>
+            <div class="hero-btns">
+                <a href="#" class="btn-outline-custom">Proposal Investasi</a>
+                <a href="#" class="btn-filled-custom">Hubungi Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="mb-0">© 2026 PT HNF Station Indonesia. Semua hak cipta dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
